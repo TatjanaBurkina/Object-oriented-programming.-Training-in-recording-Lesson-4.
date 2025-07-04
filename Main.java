@@ -2,18 +2,18 @@ public class Main {
     public static void main(String[] args) {
         Market market = new Market();
 
-        market.takeInQueue("Иван");
-        market.takeInQueue("Мария");
+        market.enqueue("Ivan");
+        market.enqueue("Maria");
 
         market.printQueueStatus();
 
-        market.takeOrder("Иван");
-        market.takeOrder("Павел"); // Пример, когда человек не в очереди
+        market.takeOrder("Ivan");
+        market.takeOrder("Pavel"); // Example: person not in the queue
 
-        market.giveOrder(); // Иван получает заказ и удаляется
+        market.giveOrder(); // Ivan receives order and is removed
 
-        market.releaseNextFromQueue(); // Мария уходит вручную
+        market.dequeue(); // Maria leaves manually
 
-        market.update(); // Проверка очереди + обработка заказов
+        market.update(); // Queue check + process pending orders
     }
 }
